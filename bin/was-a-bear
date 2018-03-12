@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# oakthree
+# @tmux, abstracted
+# This file switches between oakthree projects.
+
+panes=$(tmux list-panes -a -F "[#{window_name}] #{pane_current_path} #{pane_current_command} #{session_name}:#{window_id}.#{pane_id}")
+
+if [ -x "$(command -v fortune)" ]; then
+  wish=$(fortune -s)
+else
+  wish="What are you, some kind of yokel? Install fortune."
+fi
+
+panes=$(echo "$panes" | \
+  fzf \
+    -n 1,2,3 \
+    --with-nth=1,2,3 \
+    --header="$wish" \
+    --preview='tmux capture-pane -p -t {-1}' | \
+  awk '{ print $4; }')
+
+if [ -z "$panes" ]; then
+  exit 0
+fi
+
+tmux switch-client -t "$panes"

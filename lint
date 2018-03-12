@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# Lint the codebase.
+
+shellcheck --exclude=SC1090,SC2162 bin/*
