@@ -8,7 +8,7 @@ panes=$(tmux list-panes -a -F "[#{window_name}] #{pane_current_path} #{pane_curr
 if [ -x "$(command -v fortune)" ]; then
   wish=$(fortune -s)
 else
-  wish="What are you, some kind of yokel? Install fortune."
+  wish="What are you, some kind of yokel? Install fortune with 'sudo apt-get install fortune'. This is a necessary part of the experience."
 fi
 
 panes=$(echo "$panes" | \

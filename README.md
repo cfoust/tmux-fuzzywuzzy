@@ -6,6 +6,8 @@
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![fuzzywuzzy-screenshot](https://raw.githubusercontent.com/cfoust/tmux-fuzzywuzzy/master/images/screenshot.png)
+
 ## purpose
 
 Fuzzy find any tmux pane across all of your sessions, windows, and panes and jump to it instantly. It even comes with a preview window.
